@@ -11,3 +11,6 @@ window.OMNI_FORM_URLS = {
   "oral": "https://docs.google.com/forms/d/e/1FAIpQLSegNUb3dzcdenhn3012-9vpzrZqrQg20Ftfrq8KXU7_ERB1Kg/viewform",
   "bilan": "https://docs.google.com/forms/d/e/1FAIpQLSegvgYHFB1JNLZF3kCmCkYbT5RFlDViebLXFM39-UhSfkW3Ng/viewform"
 };
+
+// Après avoir créé le quiz, collez ici uniquement son lien élève /viewform.
+window.OMNI_LEX_QUIZ_URL = '';
