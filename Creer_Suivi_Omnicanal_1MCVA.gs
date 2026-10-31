@@ -71,27 +71,28 @@ function creerSuiviOmnicanal() {
   const urls = {};
   OMNI_ETAPES.forEach(etape => {
     const savedFormId = props.getProperty(OMNI_PROP + 'STAGE_' + etape.id);
-    const form = savedFormId ? FormApp.openById(savedFormId) : FormApp.create('1re MCV A — Mission omnicanale — ' + etape.titre);
-    if (!savedFormId) {
+    const form = savedFormId ? FormApp.openById(savedFormId) :
+      FormApp.create('1re MCV A — Mission omnicanale — ' + etape.titre);
+    props.setProperty(OMNI_PROP + 'STAGE_' + etape.id, form.getId());
+    props.setProperty(OMNI_PROP + form.getId(), etape.id);
     form.setDescription('Après avoir travaillé l’étape dans le parcours, décrivez ce que vous avez réellement fait. Ce dépôt sera relu par A.Zeboudj. Ne saisissez aucun mot de passe ni donnée de client.');
     form.setConfirmationMessage('Votre dépôt est enregistré. Revenez au parcours et cochez « Formulaire envoyé ». Votre enseignant vérifiera la preuve et attribuera les points.');
     form.setCollectEmail(false);
     form.setAllowResponseEdits(false);
     form.setAcceptingResponses(true);
     if (typeof form.setPublished === 'function') form.setPublished(true);
-    form.addTextItem().setTitle('Nom').setRequired(true);
-    form.addTextItem().setTitle('Prénom').setRequired(true);
-    form.addTextItem().setTitle('Classe').setRequired(true);
-    form.addTextItem().setTitle('Adresse de travail (compte scolaire ou professionnel)').setRequired(true);
-    etape.questions.forEach(q => {
+    const expected = [['Nom','text'],['Prénom','text'],['Classe','text'],
+      ['Adresse de travail (compte scolaire ou professionnel)','text'], ...etape.questions];
+    const present = new Set(form.getItems().map(item => item.getTitle()));
+    expected.forEach(q => {
+      if (present.has(q[0])) return;
       const item = q[1] === 'paragraph' ? form.addParagraphTextItem() : form.addTextItem();
       item.setTitle(q[0]).setRequired(true);
     });
-    form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
-    ScriptApp.newTrigger('enregistrerDepotOmnicanal').forForm(form).onFormSubmit().create();
-    props.setProperty(OMNI_PROP + form.getId(), etape.id);
-    props.setProperty(OMNI_PROP + 'STAGE_' + etape.id, form.getId());
-    }
+    if (!form.getDestinationId()) form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
+    const hasTrigger = ScriptApp.getProjectTriggers().some(t =>
+      t.getHandlerFunction() === 'enregistrerDepotOmnicanal' && t.getTriggerSourceId() === form.getId());
+    if (!hasTrigger) ScriptApp.newTrigger('enregistrerDepotOmnicanal').forForm(form).onFormSubmit().create();
     urls[etape.id] = form.getPublishedUrl();
     liens.appendRow([etape.titre, urls[etape.id], form.getEditUrl()]);
   });
