@@ -1,7 +1,7 @@
 /** 1re MCV A — Quiz de vocabulaire en situation.
  * À coller comme nouveau fichier .gs dans le projet Apps Script qui héberge le suivi.
  * Exécuter creerQuizLexiqueOmnicanal() une fois ; les relances réutilisent le formulaire existant.
- * Le formulaire et ses réponses restent dans Google ; seul le lien élève doit aller sur GitHub.
+ * 20 QCU autocorrigés + 2 réponses rédigées à apprécier par l'enseignant.\n * Le formulaire et ses réponses restent dans Google ; seul le lien élève doit aller sur GitHub.
  */
 function creerQuizLexiqueOmnicanal() {
   const props = PropertiesService.getScriptProperties();
@@ -231,6 +231,17 @@ function creerQuizLexiqueOmnicanal() {
     item.setChoices(ordered.map(answer => item.createChoice(answer, answer === q[1])));
     item.setFeedbackForCorrect(FormApp.createFeedback().setText('Exact. ' + q[3]).build());
     item.setFeedbackForIncorrect(FormApp.createFeedback().setText('À revoir : ' + q[1] + '. ' + q[3]).build());
+  });
+  // La syntaxe produite par l'élève ne peut pas être jugée fiablement par un QCU.
+  // Ces deux réponses libres sont lues et appréciées par l'enseignant.
+  const phrases = [
+    'Rédigez deux phrases sur votre commerce en utilisant correctement « point de contact » et « canal de vente ». Précisez ce que le client peut faire concrètement.',
+    'Rédigez deux phrases distinguant un fait vérifié d’une amélioration proposée. Employez correctement « parcours d’achat » et « omnicanalité ».'
+  ];
+  phrases.forEach(title => {
+    if (!form.getItems().some(it => it.getTitle() === title)) {
+      form.addParagraphTextItem().setTitle(title).setRequired(true);
+    }
   });
   const sheetId = props.getProperty('OMNI_1MCVA_SHEET_ID');
   let current = null;
