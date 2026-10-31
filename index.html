@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1re MCV A — Mission omnicanal</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#F7F3EA;color:#173B3D;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:1.6}button,a,input,textarea,summary{outline-offset:4px}button{font:inherit;cursor:pointer}a{color:#175e66;text-underline-offset:3px}aside{position:fixed;inset:0 auto 0 0;width:270px;background:#17484B;color:white;padding:28px 19px;overflow-y:auto;z-index:5}aside h2{font-size:23px;line-height:1.2;margin:0 0 9px}aside p{font-size:13px}nav a{display:block;color:#e7f4ec;text-decoration:none;padding:9px 10px;margin:2px 0;border-radius:8px;font-size:14px}nav a:hover,nav a.active{background:#F1C766;color:#17484B}aside button{width:100%;background:#DCEFE6;color:#17484B;border:0;border-radius:8px;padding:9px;margin:5px 0;font-size:13px}aside .quiet{background:transparent;color:#fff;border:1px solid #78a2a2}main{margin-left:270px;padding:42px 48px 80px;max-width:1540px}.topline{font-size:13px;color:#476866;letter-spacing:.06em}.section{padding:26px 0 45px;border-bottom:1px solid #b4c8be;scroll-margin-top:20px}h1{font-size:clamp(36px,4vw,57px);line-height:1.08;letter-spacing:-.035em;margin:20px 0}h2{font-size:32px;line-height:1.25;margin:10px 0}h3{font-size:21px;margin:17px 0 10px}h4{font-size:18px;line-height:1.45}p{margin:10px 0 16px}.sub{font-size:20px;color:#52706b}.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase}.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:center}.hero svg{width:100%;max-height:340px}@media(prefers-reduced-motion:no-preference){.hero svg path:first-of-type{animation:flow 7s linear infinite}@keyframes flow{to{stroke-dashoffset:-56}}}.badge,.target{background:#DCEFE6;border-radius:12px;padding:12px 17px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:22px 0}.card{background:white;border:1px solid #dce2d8;border-radius:18px;padding:22px}.card h3{margin-top:0}.callout{border-left:5px solid #DA795C;background:#fff8e5;padding:19px 23px;border-radius:0 12px 12px 0;margin:25px 0}.field{display:block;font-weight:bold;font-size:15px;margin:15px 0}textarea{display:block;width:100%;border:1px solid #91afa6;border-radius:9px;padding:12px;font:16px/1.6 Arial;color:#173B3D;background:white;margin-top:7px;min-height:76px;resize:vertical}textarea::placeholder{color:#62766e}details{background:#DCEFE6;border-radius:12px;padding:14px 18px;margin:18px 0}summary{font-weight:bold;cursor:pointer}details p,details li{font-size:16px}.checks{padding:14px 0}.checks label{display:block;margin:10px 0;font-size:16px}input[type=checkbox],input[type=radio]{width:18px;height:18px;vertical-align:middle;accent-color:#17484B;margin-right:7px}.quiz{background:#fff;border-radius:15px;border:1px solid #ccdacd;padding:20px;margin:20px 0}.quiz label{display:block;padding:9px;border-radius:7px}.quiz button,.linkbutton{background:#17484B;color:white;border:0;border-radius:8px;padding:10px 17px;display:inline-block;text-decoration:none;font-size:15px;margin:12px 8px 0 0}.feedback{background:#DCEFE6;padding:15px;border-radius:8px}.ladder{display:grid;grid-template-columns:1fr 1fr;gap:15px}.ladder article{background:#fff;border-top:5px solid #17484B;padding:20px;border-radius:12px}.ladder b{font-size:23px}.ladder small{font-size:15px}.process{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}.process span{background:#F1C766;padding:10px 14px;border-radius:10px;font-size:15px;font-weight:bold}.process span:not(:last-child):after{content:' →';padding-left:8px}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;background:white;table-layout:fixed}th{background:#17484B;color:white;padding:13px;text-align:left;font-size:15px}td{padding:12px;border:1px solid #c9d8cb;vertical-align:top}.slidebrief{display:flex;gap:20px;border-bottom:1px solid #c8d6c9;padding:15px 0}.slidebrief .num{font-size:34px;font-weight:bold;color:#DA795C;min-width:50px}.slidebrief p{font-size:16px;margin:8px 0}.done{display:flex;align-items:center;gap:9px;background:#DCEFE6;border-radius:10px;padding:12px;margin-top:28px;font-weight:bold}progress{width:100%;height:9px;accent-color:#F1C766}#status{position:fixed;bottom:15px;right:18px;padding:10px 16px;border-radius:12px;background:#17484B;color:white;z-index:10;font-size:13px;max-width:400px;box-shadow:0 4px 18px #0002}footer{font-size:13px;margin-top:35px}#mobilemenu{display:none}@media(max-width:1000px){aside{width:230px}main{margin-left:230px;padding:30px 25px}.hero{grid-template-columns:1fr}.hero svg{max-height:230px}.ladder{grid-template-columns:1fr}h1{font-size:42px}}@media(max-width:680px){aside{position:static;width:auto;padding:18px}aside nav{display:grid;grid-template-columns:1fr 1fr}aside .controls{display:grid;grid-template-columns:1fr 1fr;gap:5px}main{margin-left:0;padding:25px 18px}h1{font-size:35px}h2{font-size:27px}table{min-width:650px}#status{position:static;margin:15px}.grid{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{aside,#status,.quiz button{display:none}main{margin:0;padding:0}.section{break-before:page}textarea{border:0;min-height:0;overflow:visible;resize:none}details{display:block}details>*{display:block}.grid{display:block}.card{break-inside:avoid}.hero svg{max-height:170px}.section:first-of-type{break-before:auto}a{color:#173B3D}h1{font-size:32px}h2{font-size:25px}body{font-size:12px}.sub{font-size:15px}}#navigation{background:transparent;padding:0;margin:12px 0;border:0}#navigation>summary{display:none}.webhint{font-size:14px;background:#DCEFE6;border-radius:10px;padding:13px 17px;margin-bottom:22px}@media(max-width:680px){#navigation>summary{display:block;background:#F1C766;color:#17484B;padding:12px;border-radius:8px;cursor:pointer}#navigation:not([open])>nav,#navigation:not([open])>.controls{display:none}#navigation>nav{margin-top:12px}.webhint{font-size:13px}}@media print{.webhint{display:none}}</style>
+</head>
+<body>
+<aside>
+<h2>MISSION<br>OMNICANAL</h2>
+<p>Parcours autonome · A.Zeboudj</p>
+<progress max="10" value="0" aria-label="Étapes terminées">
+</progress>
+<p id="count">
+</p>
+<details id="navigation" open>
+<summary>Étapes et sauvegardes</summary>
+<nav aria-label="Étapes">
+<a href="#accueil">Votre mission</a>
+<a href="#outils">01 · Préparer mes outils</a>
+<a href="#notions">02 · Comprendre les notions</a>
+<a href="#recherche">03 · Rechercher sans IA</a>
+<a href="#commerce">04 · Étudier un commerce réel</a>
+<a href="#parcours">05 · Reconstituer le parcours</a>
+<a href="#strategie">06 · Proposer une amélioration</a>
+<a href="#canva">07 · Construire mon Canva</a>
+<a href="#oral">08 · Préparer ma prise de parole</a>
+<a href="#bilan">09 · Vérifier, remettre et garder une trace</a>
+<a href="#aide">Aide · Je débloque mon travail</a>
+</nav>
+<div class="controls">
+<button id="export">Exporter mon carnet (.json)</button>
+<button id="import">Importer un carnet</button>
+<button id="notes">Télécharger mes notes (.txt)</button>
+<button id="print">Imprimer / enregistrer en PDF</button>
+<button id="clear" class="quiet">Effacer les données de ce PC</button>
+<input type="file" id="file" accept=".json,application/json" hidden>
+</div>
+</details>
+</aside>
+<main>
+<div class="webhint"><strong>Vous venez de l’ancienne application Google ?</strong> Importez votre carnet .json avec le bouton « Importer un carnet ». Exportez-le d’abord depuis l’ancienne application, sur le navigateur où vous travailliez.<br>Sur téléphone, ouvrez ce lien dans Chrome, Firefox ou Safari si le navigateur intégré à WhatsApp gêne l’affichage ou la sauvegarde. Sur PC, ouvrez le même lien pour travailler sur Canva. Exportez votre carnet pour changer d’appareil.</div>
+<div class="topline">BLOC 1 · CONSEILLER ET VENDRE · E31 VENTE-CONSEIL</div>
+<section class="section" id="accueil">
+<h2>Votre mission</h2>
+<p class="sub">Une semaine pour relier les canaux et expliquer vos choix.</p>
+<div class="hero">
+<div>
+<p class="eyebrow">1re MCV A • Semaine du 12 octobre 2026</p>
+<h1>Un client.<br>Plusieurs canaux.<br>Un parcours fluide.</h1>
+<p>Vous êtes chargé(e) d'étudier un commerce de proximité réel et de proposer une amélioration utile à ses clients. Vous préparez un mini-cours et une présentation Canva pour vos camarades.</p>
+<p class="badge">Recherche sans IA • travail personnel • séances en demi-groupe</p>
+</div>
+<svg viewBox="0 0 500 310" role="img" aria-label="Une boutique reliée à un ordinateur et à un téléphone">
+<circle cx="290" cy="150" r="132" fill="#DCEFE6"/>
+<path d="M96 122Q205 6 360 68M122 230Q320 302 399 185" fill="none" stroke="#DA795C" stroke-width="4" stroke-dasharray="7 7"/>
+<rect x="150" y="105" width="200" height="145" rx="8" fill="#fff" stroke="#17484B" stroke-width="4"/>
+<path d="M140 105L165 65H335L360 105Z" fill="#F1C766" stroke="#17484B" stroke-width="4"/>
+<path d="M168 67v37m38-37v37m39-37v37m39-37v37m39-37v37" stroke="#17484B" stroke-width="9"/>
+<rect x="180" y="141" width="56" height="73" rx="3" fill="#DCEFE6"/>
+<rect x="263" y="141" width="60" height="109" fill="#17484B"/>
+<circle cx="307" cy="197" r="4" fill="#F1C766"/>
+<rect x="32" y="154" width="133" height="85" rx="9" fill="#17484B"/>
+<rect x="42" y="164" width="113" height="64" rx="4" fill="#F7F3EA"/>
+<path d="M18 246h160l-15 15H34Z" fill="#17484B"/>
+<rect x="383" y="70" width="67" height="125" rx="12" fill="#17484B"/>
+<rect x="390" y="80" width="53" height="100" rx="5" fill="#F7F3EA"/>
+<circle cx="416" cy="138" r="18" fill="#DA795C"/>
+<path d="M410 138l5 5 9-11" fill="none" stroke="white" stroke-width="3"/>
+</svg>
+</div>
+<div class="grid">
+<div class="card">
+<h3>Ce que vous allez produire</h3>
+<ul>
+<li>Un carnet de recherche avec vos sources.</li>
+<li>Une présentation Canva de 10 diapositives, exportée en PDF.</li>
+<li>Une prise de parole de 3 minutes, suivie d’une question.</li>
+<li>Un bilan personnel pour votre portfolio E31.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Votre repère dans la formation</h3>
+<p>
+<strong>Bloc 1 : Conseiller et vendre.</strong>
+<br>Compétences travaillées : assurer la veille commerciale ; réaliser la vente dans un cadre omnicanal. L’unité <strong>U31 / E31 : Vente-conseil</strong> se rattache à ce bloc.</p>
+<p>Cette mission entraîne la recherche d’informations, l’analyse du parcours client et la communication professionnelle. Elle constitue une trace d’apprentissage ; elle ne valide pas à elle seule toute l’épreuve E31.</p>
+</div>
+</div>
+<div class="callout">Après SONCASE et CAP, vous élargissez votre regard : où le client cherche-t-il une information, achète-t-il et obtient-il de l’aide ? Comment garder la même qualité de conseil lorsqu’il change de canal ?</div>
+<h3>Avant de commencer</h3>
+<label class="field" for="identite">Nom, prénom et classe<textarea id="identite" data-save="identite" rows="2" placeholder="Ex. : prénom nom — 1re MCV A">
+</textarea>
+</label>
+<p>La date de remise sera annoncée par votre enseignant. Travaillez dans l’ordre des étapes. À chaque fin de séance, exportez votre carnet. Il reste sur ce navigateur seulement tant que vous ne l’avez pas téléchargé.</p>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="start_0"> Je sais ce que je dois remettre.</label>
+<label>
+<input type="checkbox" data-save="start_1"> J’ai compris que mon commerce doit être réel et que mes propositions ne sont pas des faits observés.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_accueil"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="outils">
+<h2>01 · Préparer mes outils</h2>
+<p class="sub">Accéder aux comptes, nommer les fichiers et pouvoir reprendre sur un autre PC.</p>
+<p class="target">Objectif : disposer d’un accès de travail et d’une méthode de sauvegarde, sans bloquer la recherche.</p>
+<div class="grid">
+<div class="card">
+<h3>J’ai déjà un compte adapté</h3>
+<p>Utilisez votre compte scolaire ou un compte professionnel déjà disponible. N’en créez pas un deuxième inutilement. Vérifiez que vous pouvez vous connecter à Canva et retrouver vos créations.</p>
+</div>
+<div class="card">
+<h3>Je dois créer mon accès</h3>
+<ol>
+<li>Ouvrez le lien officiel Google ci-dessous.</li>
+<li>Choisissez une adresse sobre : <strong>nom.prenom.pro@gmail.com</strong>. Si elle est prise, ajoutez une initiale ou un chiffre discret.</li>
+<li>Renseignez votre vraie date de naissance et suivez les étapes de vérification.</li>
+<li>Gardez vos accès dans votre moyen personnel sécurisé. Ne les écrivez pas dans ce carnet.</li>
+</ol>
+</div>
+</div>
+<p>
+<a class="linkbutton" href="https://accounts.google.com/signup" target="_blank" rel="noopener noreferrer">Créer un compte Google</a> <a href="https://support.google.com/accounts/answer/1350409?hl=fr" target="_blank" rel="noopener noreferrer">Âge requis : aide Google</a>
+</p>
+<div class="callout">En France, la gestion autonome d’un compte Google est prévue à partir de 15 ans. Si vous avez moins de 15 ans, passez par votre enseignant et vos responsables légaux pour la procédure adaptée. Ne modifiez pas votre âge. Si une validation vous bloque, commencez le brouillon et la recherche avec les outils autorisés de l’établissement.</div>
+<h3>Accéder à Canva</h3>
+<ol>
+<li>Ouvrez <a href="https://www.canva.com/fr_fr/" target="_blank" rel="noopener noreferrer">Canva</a>.</li>
+<li>Si votre enseignant vous donne une invitation Canva Éducation, rejoignez sa classe. Sinon, utilisez un compte gratuit rattaché à votre boîte professionnelle.</li>
+<li>Choisissez « Présentation » au format 16:9. Nommez la création <strong>NOM_Prenom_1MCVA_Omnicanal</strong>.</li>
+<li>Utilisez uniquement des éléments gratuits ou accessibles par votre classe. Vous n’avez pas besoin de payer Canva Pro.</li>
+<li>Créez la couverture puis revenez à ce parcours. Le contenu passe avant la décoration.</li>
+</ol>
+<p>
+<a href="https://www.canva.com/fr_fr/education/etudiants/" target="_blank" rel="noopener noreferrer">Canva Éducation : accès des élèves</a>
+</p>
+<h3>Reprendre mon travail à chaque séance</h3>
+<ol>
+<li>Sur ce PC, cliquez sur <strong>Exporter mon carnet</strong> dans le menu.</li>
+<li>Gardez le fichier <strong>.json</strong> dans votre espace personnel / ENT, selon la consigne de classe.</li>
+<li>Sur un autre PC, ouvrez le même HTML puis cliquez sur <strong>Importer un carnet</strong> et sélectionnez votre fichier.</li>
+<li>Pour remettre une version lisible, cliquez sur <strong>Télécharger mes notes</strong> ou imprimez votre carnet.</li>
+</ol>
+<p>À la fin : déconnectez-vous de Google et Canva. Sur un PC partagé, exportez d’abord, puis utilisez « Effacer les données de ce PC ». Cette page ne transmet rien automatiquement à votre enseignant.</p>
+<label class="field" for="canvalink">Lien de ma création Canva (aucun mot de passe)<textarea id="canvalink" data-save="canvalink" rows="2" placeholder="Collez uniquement le lien de la présentation">
+</textarea>
+</label>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="tools_0"> Je retrouve mon Canva.</label>
+<label>
+<input type="checkbox" data-save="tools_1"> Je sais exporter et importer le carnet.</label>
+<label>
+<input type="checkbox" data-save="tools_2"> Je ne stocke aucun mot de passe ici.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_outils"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="notions">
+<h2>02 · Comprendre les notions</h2>
+<p class="sub">D’abord comprendre, ensuite expliquer avec vos propres mots.</p>
+<p class="target">Votre premier travail : préparer deux diapositives de mini-cours compréhensibles par un camarade débutant.</p>
+<div class="grid">
+<div class="card">
+<h3>Canal de vente</h3>
+<p>Le moyen par lequel le client peut passer une commande ou réaliser un achat : magasin, site marchand, application permettant de commander, vente par téléphone si le commerce l’organise.</p>
+<p>
+<strong>Exemple :</strong> un site qui permet seulement de consulter les horaires n’est pas un site marchand.</p>
+</div>
+<div class="card">
+<h3>Communication et service</h3>
+<p>Un canal de communication sert à informer et à échanger : affiche, réseau social, courriel, téléphone. Un service accompagne l’achat : conseil, retrait, livraison, traitement d’une réclamation.</p>
+<p>Un même outil peut avoir plusieurs fonctions. Il faut observer ce qu’il permet réellement de faire.</p>
+</div>
+</div>
+<div class="callout">
+<strong>À distinguer :</strong> le circuit de distribution décrit les intermédiaires entre producteur et consommateur ; le canal décrit le moyen d’accès du client. Un circuit direct n’est pas automatiquement omnicanal.</div>
+<div class="ladder">
+<article>
+<b>Monocanal</b>
+<p>Un seul canal de vente.</p>
+<small>Ex. : vente uniquement en boutique.</small>
+</article>
+<article>
+<b>Multicanal</b>
+<p>Plusieurs canaux coexistent.</p>
+<small>Le magasin et le site vendent, sans continuité démontrée.</small>
+</article>
+<article>
+<b>Cross-canal</b>
+<p>Des canaux se complètent dans un parcours.</p>
+<small>Commande en ligne puis retrait en boutique.</small>
+</article>
+<article>
+<b>Omnicanal</b>
+<p>Les canaux sont coordonnés pour une expérience cohérente et continue.</p>
+<small>Commande, informations utiles et suivi passent d’un canal à l’autre sans recommencer inutilement.</small>
+</article>
+</div>
+<p>
+<strong>Ne confondez pas :</strong> « le client utilise beaucoup de canaux » et « le commerce relie efficacement ses canaux ». Un scénario de click & collect montre un lien cross-canal ; il ne prouve pas, à lui seul, une intégration omnicanale complète.</p>
+<div class="quiz" data-answer="1">
+<h4>1. Un client voit une publicité Instagram, achète en boutique, puis rentre chez lui. Que peut-on affirmer ?</h4>
+<label>
+<input type="radio" name="q1" value="0" data-save="q1_0"> Instagram est forcément un canal de vente.</label>
+<label>
+<input type="radio" name="q1" value="1" data-save="q1_1"> On observe des points de contact, mais pas encore la coordination des canaux.</label>
+<label>
+<input type="radio" name="q1" value="2" data-save="q1_2"> Le commerce est forcément omnicanal.</label>
+<button type="button" class="checkquiz">Vérifier et comprendre</button>
+<p class="feedback" hidden>La bonne réponse est la deuxième. La publicité informe ; l’achat a lieu en boutique. Aucun élément ne montre ici la circulation d’une commande ou d’informations entre les canaux.</p>
+</div>
+<div class="quiz" data-answer="0">
+<h4>2. Le client paie sur le site et retire sa commande en boutique.</h4>
+<label>
+<input type="radio" name="q2" value="0" data-save="q2_0"> C’est un parcours cross-canal ; il faut d’autres indices pour conclure à une intégration omnicanale complète.</label>
+<label>
+<input type="radio" name="q2" value="1" data-save="q2_1"> C’est monocanal parce qu’il achète un seul produit.</label>
+<label>
+<input type="radio" name="q2" value="2" data-save="q2_2"> Le retrait est nécessairement un troisième canal de vente.</label>
+<button type="button" class="checkquiz">Vérifier et comprendre</button>
+<p class="feedback" hidden>La première réponse est juste : le site et la boutique se complètent. Le retrait est un service lié à la commande, pas automatiquement un canal de vente supplémentaire.</p>
+</div>
+<div class="quiz" data-answer="2">
+<h4>3. Quel indice est le plus solide pour montrer une continuité omnicanale ?</h4>
+<label>
+<input type="radio" name="q3" value="0" data-save="q3_0"> La marque publie chaque jour sur trois réseaux.</label>
+<label>
+<input type="radio" name="q3" value="1" data-save="q3_1"> Le logo a la même couleur partout.</label>
+<label>
+<input type="radio" name="q3" value="2" data-save="q3_2"> Le conseiller retrouve la commande internet et peut en expliquer le suivi au client.</label>
+<button type="button" class="checkquiz">Vérifier et comprendre</button>
+<p class="feedback" hidden>La troisième réponse montre une continuité d’information et de service. Les deux autres éléments ne suffisent pas à démontrer la coordination du parcours.</p>
+</div>
+<h3>Votre brouillon de mini-cours</h3>
+<label class="field" for="definitions">Définissez multicanal, cross-canal et omnicanal. Ajoutez un exemple personnel pour chaque notion.<textarea id="definitions" data-save="definitions" rows="6" placeholder="Trois définitions courtes + trois exemples. Ne copiez pas les phrases du cours.">
+</textarea>
+</label>
+<label class="field" for="distinction">Expliquez la différence entre vente, communication et service.<textarea id="distinction" data-save="distinction" rows="4" placeholder="Pour chaque fonction : un outil + ce que le client peut faire.">
+</textarea>
+</label>
+<details>
+<summary>Si je ne sais pas commencer</summary>
+<p>Utilisez : « Le multicanal signifie que… Par exemple… Le cross-canal ajoute… L’omnicanal exige… » Puis remplacez ces amorces par vos phrases.</p>
+</details>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="notions_0"> Je distingue plusieurs canaux et leur coordination.</label>
+<label>
+<input type="checkbox" data-save="notions_1"> Je peux expliquer les notions sans lire une définition copiée.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_notions"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="recherche">
+<h2>03 · Rechercher sans IA</h2>
+<p class="sub">Des preuves, des sources et une reformulation personnelle.</p>
+<ol>
+<li>Ouvrez une page originale : France Num, site officiel de l’enseigne, rubrique services ou aide.</li>
+<li>Lisez le passage utile. Ne vous arrêtez pas au résumé du moteur de recherche.</li>
+<li>Notez l’auteur ou l’organisme, l’URL exacte, la date de consultation et l’information retenue.</li>
+<li>Reformulez sans copier, puis donnez un exemple qui montre votre compréhension.</li>
+<li>Comparez si possible deux sources. Si elles se contredisent, indiquez-le au lieu de choisir au hasard.</li>
+</ol>
+<div class="callout">Pour cette mission, vous n’utilisez pas d’IA pour chercher, rédiger vos explications ou générer votre production. Vous pouvez utiliser les outils de mise en page, modèles et illustrations classiques de Canva. Le raisonnement et les phrases doivent être les vôtres.</div>
+<h3>Ressources pour démarrer</h3>
+<ul>
+<li>
+<a href="https://www.francenum.gouv.fr/files/Documents/En_avant_vers_le_numerique_juin_2019.pdf" target="_blank" rel="noopener noreferrer">France Num — Commerçants, en avant vers le numérique</a> : repérez le vocabulaire du commerce numérique.</li>
+<li>
+<a href="https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/plan-daction/commerces-comment-se-lancer-dans-le-numerique" target="_blank" rel="noopener noreferrer">France Num — Commerces : comment se lancer dans le numérique</a> : recherchez des usages concrets.</li>
+<li>Site officiel du commerce retenu : pages horaires, commande, services, contact et aide.</li>
+</ul>
+<p>
+<strong>Exemple de trace :</strong> organisme : France Num ; document : guide du commerce numérique ; consultation : votre date réelle ; idée retenue : une réservation ou commande en ligne peut être suivie d’un retrait en magasin ; reformulation : le client commence à distance puis poursuit sur place.</p>
+<h3>Mon carnet de sources</h3>
+<p>Conservez <strong>au moins 3 sources utiles</strong> : une pour les notions et deux pour le commerce / ses services. Si une petite boutique a peu de pages, utilisez une autre source identifiable et expliquez ses limites.</p>
+<label class="field" for="source1">Source 1 : organisme, titre, URL, date, fait retenu, reformulation et limite éventuelle<textarea id="source1" data-save="source1" rows="5" placeholder="Une source par encadré. Une page officielle peut prouver un service annoncé ; elle ne prouve pas à elle seule qu’il fonctionne toujours.">
+</textarea>
+</label>
+<label class="field" for="source2">Source 2 : organisme, titre, URL, date, fait retenu, reformulation et limite éventuelle<textarea id="source2" data-save="source2" rows="5" placeholder="Une source par encadré. Une page officielle peut prouver un service annoncé ; elle ne prouve pas à elle seule qu’il fonctionne toujours.">
+</textarea>
+</label>
+<label class="field" for="source3">Source 3 : organisme, titre, URL, date, fait retenu, reformulation et limite éventuelle<textarea id="source3" data-save="source3" rows="5" placeholder="Une source par encadré. Une page officielle peut prouver un service annoncé ; elle ne prouve pas à elle seule qu’il fonctionne toujours.">
+</textarea>
+</label>
+<div class="quiz" data-answer="1">
+<h4>Votre résultat de recherche affiche : « retrait en 2 heures ». Quelle méthode est la plus professionnelle ?</h4>
+<label>
+<input type="radio" name="q4" value="0" data-save="q4_0"> Le recopier : le moteur de recherche suffit.</label>
+<label>
+<input type="radio" name="q4" value="1" data-save="q4_1"> Ouvrir la page d’origine, vérifier les conditions et noter la date ainsi que l’URL.</label>
+<label>
+<input type="radio" name="q4" value="2" data-save="q4_2"> Conclure que toutes les commandes sont prêtes en deux heures.</label>
+<button type="button" class="checkquiz">Vérifier et comprendre</button>
+<p class="feedback" hidden>La deuxième méthode vérifie le contexte et les conditions. Un résumé peut être incomplet ou ancien. Une promesse doit être attribuée à sa source, et non transformée en certitude universelle.</p>
+</div>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="search_0"> Mes liens pointent vers les pages lues.</label>
+<label>
+<input type="checkbox" data-save="search_1"> Je note les dates de consultation.</label>
+<label>
+<input type="checkbox" data-save="search_2"> Mes explications sont personnelles.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_recherche"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="commerce">
+<h2>04 · Étudier un commerce réel</h2>
+<p class="sub">Vous enquêtez : vous ne devinez pas.</p>
+<p class="target">Choisissez un commerce de proximité que vous pourriez présenter et conseiller : librairie, magasin de sport, boulangerie, boutique de vêtements, opticien… Il peut être indépendant ou appartenir à une enseigne.</p>
+<ol>
+<li>Identifiez son nom, sa ville et son activité, sans communiquer votre adresse personnelle.</li>
+<li>Cherchez sa présence officielle : site, réseaux, page de contact et services annoncés.</li>
+<li>Relevez ce qui permet de vendre, d’informer et d’aider.</li>
+<li>Indiquez la preuve. Pour une absence de preuve, écrivez <strong>« non vérifié »</strong> et non « inexistant ».</li>
+<li>Gardez vos idées futures dans une colonne séparée.</li>
+</ol>
+<p>Aucun achat, déplacement ou contact avec le commerçant n’est obligatoire. L’étude peut être réalisée à partir d’informations publiques. Si vous utilisez une observation personnelle, datez-la et décrivez-la précisément.</p>
+<div class="grid">
+<div class="card">
+<h3>Fait observé</h3>
+<p>« La page officielle propose un formulaire de réservation. URL… Consultée le… »</p>
+</div>
+<div class="card">
+<h3>Information non vérifiée</h3>
+<p>« Je n’ai pas trouvé de preuve permettant d’affirmer que le stock est synchronisé entre site et magasin. »</p>
+</div>
+<div class="card">
+<h3>Proposition</h3>
+<p>« Je propose de confirmer la disponibilité avant le déplacement du client. Ce service reste à organiser. »</p>
+</div>
+</div>
+<label class="field" for="shop">Carte d’identité du commerce<textarea id="shop" data-save="shop" rows="4" placeholder="Nom • commune • activité • clientèle visée • lien officiel • pourquoi ce choix">
+</textarea>
+</label>
+<p>
+<strong>Votre tableau : 4 lignes au minimum.</strong> Une ligne décrit un point de contact, même s’il ne sert pas à vendre.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Point de contact</th>
+<th>Fonction et action possible</th>
+<th>Preuve / limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<label class="field" for="channel1">Canal 1<textarea id="channel1" data-save="channel1" rows="2" placeholder="Ex. : magasin / site / téléphone">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="function1">Fonction 1<textarea id="function1" data-save="function1" rows="3" placeholder="Vente, communication ou service ? Que peut faire le client ?">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="proof1">Preuve 1<textarea id="proof1" data-save="proof1" rows="3" placeholder="URL et date, ou observation datée / non vérifié">
+</textarea>
+</label>
+</td>
+</tr>
+<tr>
+<td>
+<label class="field" for="channel2">Canal 2<textarea id="channel2" data-save="channel2" rows="2" placeholder="Ex. : magasin / site / téléphone">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="function2">Fonction 2<textarea id="function2" data-save="function2" rows="3" placeholder="Vente, communication ou service ? Que peut faire le client ?">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="proof2">Preuve 2<textarea id="proof2" data-save="proof2" rows="3" placeholder="URL et date, ou observation datée / non vérifié">
+</textarea>
+</label>
+</td>
+</tr>
+<tr>
+<td>
+<label class="field" for="channel3">Canal 3<textarea id="channel3" data-save="channel3" rows="2" placeholder="Ex. : magasin / site / téléphone">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="function3">Fonction 3<textarea id="function3" data-save="function3" rows="3" placeholder="Vente, communication ou service ? Que peut faire le client ?">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="proof3">Preuve 3<textarea id="proof3" data-save="proof3" rows="3" placeholder="URL et date, ou observation datée / non vérifié">
+</textarea>
+</label>
+</td>
+</tr>
+<tr>
+<td>
+<label class="field" for="channel4">Canal 4<textarea id="channel4" data-save="channel4" rows="2" placeholder="Ex. : magasin / site / téléphone">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="function4">Fonction 4<textarea id="function4" data-save="function4" rows="3" placeholder="Vente, communication ou service ? Que peut faire le client ?">
+</textarea>
+</label>
+</td>
+<td>
+<label class="field" for="proof4">Preuve 4<textarea id="proof4" data-save="proof4" rows="3" placeholder="URL et date, ou observation datée / non vérifié">
+</textarea>
+</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details>
+<summary>Mon commerce a peu de moyens numériques</summary>
+<p>C’est un bon point de départ. Décrivez ce qui existe, puis proposez une amélioration réaliste. Un petit commerce n’a pas nécessairement besoin d’une application coûteuse.</p>
+</details>
+<label class="field" for="diagnostic">Diagnostic prudent : que pouvez-vous vraiment conclure ?<textarea id="diagnostic" data-save="diagnostic" rows="4" placeholder="Je dispose de preuves de… Je ne peux pas vérifier… Je qualifierais la situation de… parce que…">
+</textarea>
+</label>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="shopcheck_0"> Mon commerce existe réellement.</label>
+<label>
+<input type="checkbox" data-save="shopcheck_1"> Je sépare mes preuves, mes incertitudes et mes idées.</label>
+<label>
+<input type="checkbox" data-save="shopcheck_2"> Je n’affirme pas qu’un réseau social vend sans l’avoir vérifié.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_commerce"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="parcours">
+<h2>05 · Reconstituer le parcours</h2>
+<p class="sub">À chaque étape : une action, un canal, un besoin et un lien.</p>
+<h3>Entraînement commun — chaussures de sport</h3>
+<p>
+<strong>Scénario fictif :</strong> un client voit une publicité Instagram. Il consulte le site de la marque pour vérifier un modèle et sa disponibilité. Il se rend en magasin pour essayer. Il termine sa commande dans l’application parce qu’une promotion y est annoncée.</p>
+<label class="field" for="sportjourney">Reconstituez ces 4 étapes et précisez la fonction de chaque canal.<textarea id="sportjourney" data-save="sportjourney" rows="5" placeholder="Étape 1 : action / canal / fonction ; étape 2…">
+</textarea>
+</label>
+<label class="field" for="sportlinks">Que faut-il vérifier pour que le parcours fonctionne ? Donnez 2 conditions.<textarea id="sportlinks" data-save="sportlinks" rows="3" placeholder="Pensez au modèle, au prix, à la disponibilité, au suivi de commande…">
+</textarea>
+</label>
+<details>
+<summary>Correction expliquée — à ouvrir après votre réponse</summary>
+<ol>
+<li>Publicité Instagram : découverte / communication.</li>
+<li>Site : recherche d’information ; vente uniquement si la commande y est possible.</li>
+<li>Magasin : essai et conseil ; vente si le client peut y acheter.</li>
+<li>Application : commande / vente dans le scénario.</li>
+</ol>
+<p>Le client traverse plusieurs canaux. Pour affirmer une coordination, il faudrait vérifier par exemple que la référence et les conditions de promotion sont claires, que la disponibilité est fiable et que la commande peut être suivie. La simple succession d’étapes ne suffit pas à prouver une organisation omnicanale.</p>
+</details>
+<h3>Votre commerce — un parcours réaliste</h3>
+<p>Créez un client fictif avec un besoin concret. Son parcours comporte <strong>4 à 5 étapes</strong>, de la découverte au suivi après achat. Marquez les étapes futures « proposition ». Aucun nom réel de client n’est nécessaire.</p>
+<label class="field" for="client">Mon client et son besoin<textarea id="client" data-save="client" rows="3" placeholder="Ex. de structure : une personne qui cherche… Elle veut… Son principal frein est…">
+</textarea>
+</label>
+<label class="field" for="journey">Mon schéma textuel du parcours<textarea id="journey" data-save="journey" rows="7" placeholder="Pour chaque étape : action → canal → besoin du client → information qui doit suivre. Terminez par l’après-vente.">
+</textarea>
+</label>
+<label class="field" for="friction">Une rupture du parcours et sa conséquence<textarea id="friction" data-save="friction" rows="4" placeholder="À l’étape… le client risque de… parce que… Cela peut provoquer…">
+</textarea>
+</label>
+<details>
+<summary>Comment rendre le schéma lisible dans Canva</summary>
+<p>Utilisez 4 ou 5 cartes numérotées et des flèches. Sous chaque carte, écrivez une action courte et le canal. Sous les flèches, indiquez le lien : référence transmise, réservation confirmée, numéro de commande, suivi…</p>
+</details>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="journeycheck_0"> Je décris les liens, pas seulement les canaux.</label>
+<label>
+<input type="checkbox" data-save="journeycheck_1"> Je prends en compte un problème du client.</label>
+<label>
+<input type="checkbox" data-save="journeycheck_2"> Mon parcours distingue existant et proposition.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_parcours"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="strategie">
+<h2>06 · Proposer une amélioration</h2>
+<p class="sub">Une idée utile, un fonctionnement concret et une limite assumée.</p>
+<p>Votre mission n’est pas d’ajouter tous les outils possibles. Choisissez <strong>une amélioration prioritaire</strong> qui résout le problème observé ou envisagé. Vous pouvez ajouter une deuxième piste courte.</p>
+<div class="process">
+<span>Problème client</span>
+<span>Action proposée</span>
+<span>Moyens et responsable</span>
+<span>Résultat attendu</span>
+<span>Limite / indicateur</span>
+</div>
+<div class="callout">
+<strong>Exemple fictif :</strong> une librairie reçoit des demandes sur les réseaux mais le client ignore si le livre l’attend. Proposition : formulaire de réservation, vérification par un vendeur, message de confirmation avec référence et délai de retrait. Bénéfice : éviter un déplacement inutile. Limite : ne pas promettre une disponibilité avant vérification. Indicateur : réservations retirées / réservations confirmées.</div>
+<label class="field" for="proposal">Mon amélioration prioritaire<textarea id="proposal" data-save="proposal" rows="5" placeholder="Problème… / Proposition… / Canaux reliés… / Information transmise… / Bénéfice client…">
+</textarea>
+</label>
+<label class="field" for="means">Mon plan de mise en œuvre<textarea id="means" data-save="means" rows="5" placeholder="Qui fait quoi ? Avec quel outil simple ? Quand ? Quelle information faut-il transmettre ? Quelle limite ou condition ?">
+</textarea>
+</label>
+<label class="field" for="indicator">Mon indicateur de réussite<textarea id="indicator" data-save="indicator" rows="3" placeholder="Ce que je mesurerais… Comment… Pourquoi cela permet de juger l’utilité de la proposition…">
+</textarea>
+</label>
+<h3>Créer un exemple de communication</h3>
+<p>Rédigez un message de <strong>40 à 60 mots</strong> qui explique votre service proposé. Il contient : destinataire, bénéfice concret, action à réaliser et condition importante. Ne créez pas de fausse promotion présentée comme réelle.</p>
+<label class="field" for="message">Brouillon de mon message<textarea id="message" data-save="message" rows="5" placeholder="Indiquez « maquette de service proposé » sur le visuel Canva.">
+</textarea>
+</label>
+<h3>Assurer la continuité quand un client rencontre un problème</h3>
+<p>Votre client a commandé à distance mais signale un problème en boutique. Expliquez une démarche en <strong>5 étapes</strong> : écouter et reformuler ; retrouver la référence ; vérifier les faits ; annoncer la suite possible et le délai ; informer le client du suivi.</p>
+<label class="field" for="service">Ma procédure de suivi client<textarea id="service" data-save="service" rows="5" placeholder="Qui retrouve quelles informations ? Comment le client sait-il ce qui va se passer ?">
+</textarea>
+</label>
+<details>
+<summary>Exemple de réponse expliquée</summary>
+<p>« Si je comprends bien, vous avez réservé ce livre et vous n’avez pas reçu de confirmation. Pour retrouver votre demande, pouvez-vous me donner sa référence ou le titre et la date ? Je vérifie le registre des réservations. Je vous indique ensuite la disponibilité et la suite possible. Nous convenons du canal sur lequel vous recevrez le suivi. »</p>
+<p>Cette réponse écoute, recueille l’information, vérifie avant de promettre et organise le suivi. Une solution commerciale ne doit pas être inventée : elle dépend des règles du commerce et des faits.</p>
+</details>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="strategycheck_0"> Mon idée répond à un problème précis.</label>
+<label>
+<input type="checkbox" data-save="strategycheck_1"> Je sais qui fait quoi et avec quelles informations.</label>
+<label>
+<input type="checkbox" data-save="strategycheck_2"> Je présente les services futurs comme des propositions.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_strategie"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="canva">
+<h2>07 · Construire mon Canva</h2>
+<p class="sub">Dix diapositives. Un raisonnement visible. Des sources retrouvables.</p>
+<p>Reprenez maintenant vos brouillons. Une diapositive sert à expliquer une idée, pas à recopier un texte entier. Utilisez des titres explicites, 3 à 5 points courts et un visuel utile.</p>
+<p>
+<strong>Repère de lisibilité :</strong> visez environ 28 points pour le texte projeté, davantage pour les titres. Si les sources sont nombreuses, raccourcissez leur libellé et rendez les liens cliquables. Relisez à distance.</p>
+<article class="slidebrief">
+<span class="num">01</span>
+<div>
+<h3>Mission et commerce</h3>
+<p>
+<strong>Contenu :</strong> Nom du commerce, commune, activité, votre nom et votre objectif.</p>
+<p>
+<strong>Forme :</strong> Une carte d’identité sobre ; pas votre adresse personnelle.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">02</span>
+<div>
+<h3>Mini-cours : les stratégies</h3>
+<p>
+<strong>Contenu :</strong> Multicanal, cross-canal, omnicanal : 3 définitions personnelles et 3 exemples.</p>
+<p>
+<strong>Forme :</strong> Trois cartes comparatives ; mettez la coordination en évidence.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">03</span>
+<div>
+<h3>Mini-cours : les fonctions</h3>
+<p>
+<strong>Contenu :</strong> Vente, communication, service : expliquez la différence et les rôles d’un même outil.</p>
+<p>
+<strong>Forme :</strong> Trois pictogrammes + une phrase d’exemple pour chaque fonction.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">04</span>
+<div>
+<h3>Ce qui existe réellement</h3>
+<p>
+<strong>Contenu :</strong> Présentez votre tableau de canaux, leurs fonctions et les preuves utiles.</p>
+<p>
+<strong>Forme :</strong> 4 lignes courtes ; marquez « non vérifié » si nécessaire.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">05</span>
+<div>
+<h3>Le parcours du client</h3>
+<p>
+<strong>Contenu :</strong> Client fictif, besoin et 4 à 5 étapes. Expliquez ce qui relie les canaux.</p>
+<p>
+<strong>Forme :</strong> Cartes numérotées + flèches ; identifiez les étapes proposées.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">06</span>
+<div>
+<h3>Le problème à résoudre</h3>
+<p>
+<strong>Contenu :</strong> Une rupture du parcours et sa conséquence pour le client.</p>
+<p>
+<strong>Forme :</strong> Avant : ce qui bloque. Objectif : ce qu’il faut faciliter.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">07</span>
+<div>
+<h3>Votre solution et ses moyens</h3>
+<p>
+<strong>Contenu :</strong> Une amélioration prioritaire, outils, responsable, information transmise, limite et indicateur.</p>
+<p>
+<strong>Forme :</strong> Un plan simple : problème → action → résultat attendu.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">08</span>
+<div>
+<h3>Votre communication</h3>
+<p>
+<strong>Contenu :</strong> Une maquette de message annonçant le service proposé.</p>
+<p>
+<strong>Forme :</strong> 40 à 60 mots ; action claire ; mention « proposition ».</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">09</span>
+<div>
+<h3>Le suivi du client</h3>
+<p>
+<strong>Contenu :</strong> Votre démarche de traitement d’un problème en 5 étapes.</p>
+<p>
+<strong>Forme :</strong> Écouter → retrouver → vérifier → annoncer → suivre.</p>
+</div>
+</article>
+<article class="slidebrief">
+<span class="num">10</span>
+<div>
+<h3>Sources et bilan</h3>
+<p>
+<strong>Contenu :</strong> Au moins 3 sources : organisme, titre, URL et date ; bilan en 2 phrases.</p>
+<p>
+<strong>Forme :</strong> Liens lisibles/cliquables. « J’ai appris… Ma limite actuelle… »</p>
+</div>
+</article>
+<p>Le modèle de dix diapositives est intégré ci-dessous. Ouvrez le volet pour le consulter sans quitter ce cours.</p>
+<details>
+<summary>Où trouver la trame et le modèle ?</summary>
+<p>Toute la trame est ci-dessus et le modèle est intégré dans le volet suivant. Aucun fichier supplémentaire n’est nécessaire.</p>
+</details>
+<details>
+<summary>Voir le modèle de présentation directement ici (10 diapositives)</summary>
+<p>Commerce fictif : servez-vous de la structure, puis remplacez le contenu par votre enquête personnelle.</p>
+<iframe title="Modèle illustratif de présentation omnicanal" loading="lazy" sandbox="allow-scripts allow-popups" style="width:100%;height:730px;border:1px solid #91afa6;border-radius:12px" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;fr&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;Omnicanal — modèle Canva illustratif&lt;/title&gt;&lt;style&gt;*{box-sizing:border-box}body{margin:0;font:18px/1.5 Arial,sans-serif;background:#F7F3EA;color:#17484B}header{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;border-bottom:1px solid #ccd8ce;font-size:13px}.pill{display:inline-block;background:#F1C766;border-radius:30px;padding:9px 15px;font-size:14px}.slide{display:none;padding:35px 55px 20px;max-width:1450px;margin:auto;min-height:calc(100vh - 150px)}.slide.active{display:block}.kicker{font-size:13px;letter-spacing:.09em;text-transform:uppercase}h1{font-size:clamp(32px,4vw,54px);line-height:1.1;letter-spacing:-.035em;margin:10px 0}h2{font-size:23px;font-weight:normal;color:#57776f;margin:12px 0 30px}h3{margin:10px 0;font-size:24px}.big{font-size:clamp(45px,6vw,80px);font-weight:bold;line-height:1.1;color:#17484B}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}article{background:white;border-radius:17px;padding:25px;border-top:5px solid #DA795C}small{font-size:16px;color:#55716b}.note{background:#DCEFE6;padding:20px;border-radius:12px}.journey{display:flex;gap:16px;margin:25px 0}.journey article{flex:1;padding:18px;position:relative}.journey article:not(:last-child):after{content:&#x27;→&#x27;;position:absolute;right:-15px;top:40%;font-size:23px}.journey b{font-size:31px;color:#DA795C}.poster{max-width:820px;background:#DCEFE6;border-top:0;border-left:10px solid #DA795C;margin:0 auto}.poster h3{font-size:40px}table{border-collapse:collapse;width:100%;background:white;font-size:17px}th{background:#17484B;color:white}th,td{padding:14px;border:1px solid #cbd8cd;text-align:left}details{margin:25px 0;font-size:15px;background:#fff9e5;border-radius:10px;padding:15px}summary{cursor:pointer;font-weight:bold}footer{position:sticky;bottom:0;background:#17484B;color:white;padding:12px 25px;display:flex;align-items:center;justify-content:space-between;gap:15px}button{font:inherit;background:#F1C766;border:0;border-radius:8px;padding:8px 17px;color:#17484B;cursor:pointer}a{color:#175e66}.counter{font-size:15px}@media(max-width:800px){.slide{padding:25px 20px}.grid{grid-template-columns:1fr}.journey{flex-wrap:wrap}.journey article{min-width:140px}.journey article:after{display:none}header{padding:12px 18px}table{font-size:14px}th,td{padding:8px}}@media print{header,footer{display:none}.slide{display:block;page-break-after:always;min-height:0;padding:15px}details{display:block}details p{display:block}h1{font-size:30px}.big{font-size:45px}.grid{grid-template-columns:repeat(3,1fr)}body{font-size:13px}}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;header&gt;&lt;b&gt;A.Zeboudj • 1re MCV A&lt;/b&gt;&lt;span&gt;Exemple de structure à adapter • aucun commerce réel&lt;/span&gt;&lt;/header&gt;&lt;section class=&quot;slide active&quot; id=&quot;s1&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 01&lt;/p&gt;&lt;h1&gt;Le Fil des Pages&lt;/h1&gt;&lt;h2&gt;Librairie de quartier • commerce fictif&lt;/h2&gt;&lt;div class=&quot;big&quot;&gt;Réserver.&lt;br&gt;Confirmer.&lt;br&gt;Retirer.&lt;/div&gt;&lt;p&gt;Comment éviter un déplacement inutile pour un livre indisponible ?&lt;/p&gt;&lt;p class=&quot;pill&quot;&gt;Maquette pédagogique • aucun service réel n’est attesté ici&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Présentez votre commerce réel et votre objectif. Cet exemple utilise une librairie fictive pour montrer la structure sans vous donner les réponses de votre enquête.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s2&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 02&lt;/p&gt;&lt;h1&gt;Comprendre les stratégies&lt;/h1&gt;&lt;h2&gt;Plusieurs canaux ne suffisent pas&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Multicanal&lt;/h3&gt;&lt;p&gt;Plusieurs canaux coexistent.&lt;/p&gt;&lt;small&gt;La boutique et le site vendent séparément.&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Cross-canal&lt;/h3&gt;&lt;p&gt;Des canaux se complètent dans un parcours.&lt;/p&gt;&lt;small&gt;Commande en ligne, retrait en boutique.&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Omnicanal&lt;/h3&gt;&lt;p&gt;Une expérience coordonnée et cohérente.&lt;/p&gt;&lt;small&gt;Le vendeur retrouve la commande et son suivi, quel que soit le canal utilisé.&lt;/small&gt;&lt;/article&gt;&lt;/div&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Expliquez les différences avec vos mots. Le click &amp; collect prouve un lien entre canaux ; il ne prouve pas à lui seul que toutes les informations et tous les services sont intégrés.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s3&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 03&lt;/p&gt;&lt;h1&gt;Un outil, plusieurs fonctions&lt;/h1&gt;&lt;h2&gt;Vente • communication • service&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Vente&lt;/h3&gt;&lt;p&gt;Le client peut commander ou acheter.&lt;/p&gt;&lt;small&gt;Le magasin vend le livre.&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Communication&lt;/h3&gt;&lt;p&gt;Le client s’informe ou échange.&lt;/p&gt;&lt;small&gt;Une publication présente une nouveauté.&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Service&lt;/h3&gt;&lt;p&gt;L’achat est facilité ou suivi.&lt;/p&gt;&lt;small&gt;Un message confirme que le livre attend le client.&lt;/small&gt;&lt;/article&gt;&lt;/div&gt;&lt;p class=&quot;note&quot;&gt;Un réseau social devient un canal de vente seulement si un dispositif de commande / achat le permet effectivement.&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Nommez la fonction et l’action possible. Une livraison est un service ; elle ne devient pas automatiquement un nouveau canal de vente.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s4&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 04&lt;/p&gt;&lt;h1&gt;Les canaux du commerce&lt;/h1&gt;&lt;h2&gt;Exemple d’un diagnostic prudent&lt;/h2&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Point de contact&lt;/th&gt;&lt;th&gt;Fonction&lt;/th&gt;&lt;th&gt;Statut dans cette maquette&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Boutique&lt;/td&gt;&lt;td&gt;Conseiller et vendre&lt;/td&gt;&lt;td&gt;Hypothèse du cas fictif&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Site vitrine&lt;/td&gt;&lt;td&gt;Informer&lt;/td&gt;&lt;td&gt;Hypothèse : pas de commande&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Réseau social&lt;/td&gt;&lt;td&gt;Présenter les nouveautés&lt;/td&gt;&lt;td&gt;Hypothèse : pas de vente intégrée&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Téléphone&lt;/td&gt;&lt;td&gt;Répondre aux questions&lt;/td&gt;&lt;td&gt;Synchronisation des réservations non établie&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Dans votre production, remplacez les hypothèses par des faits sourcés : URL, date, observation. Écrivez « non vérifié » si l’information manque. Les données de ce modèle ne proviennent pas d’une vraie boutique.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s5&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 05&lt;/p&gt;&lt;h1&gt;Le parcours de Lina&lt;/h1&gt;&lt;h2&gt;Un client fictif avec un besoin précis&lt;/h2&gt;&lt;p&gt;Lina cherche un livre pour un cadeau à offrir samedi. Elle veut éviter un déplacement inutile.&lt;/p&gt;&lt;div class=&quot;journey&quot;&gt;&lt;article&gt;&lt;b&gt;01&lt;/b&gt;&lt;p&gt;Découvre un titre&lt;/p&gt;&lt;small&gt;Réseau social&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;02&lt;/b&gt;&lt;p&gt;Vérifie la fiche&lt;/p&gt;&lt;small&gt;Site vitrine&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;03&lt;/b&gt;&lt;p&gt;Demande disponibilité&lt;/p&gt;&lt;small&gt;Téléphone&lt;/small&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;04&lt;/b&gt;&lt;p&gt;Achète le livre&lt;/p&gt;&lt;small&gt;Boutique&lt;/small&gt;&lt;/article&gt;&lt;/div&gt;&lt;p class=&quot;note&quot;&gt;Information à conserver : le titre exact et l’édition. Une disponibilité annoncée doit encore être vérifiée.&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Le schéma décrit une action et un canal à chaque étape. L’enjeu est ensuite d’expliquer le lien entre les étapes. N’affirmez pas qu’une disponibilité est certaine sans preuve.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s6&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 06&lt;/p&gt;&lt;h1&gt;Le point de friction&lt;/h1&gt;&lt;h2&gt;« Est-ce que mon livre m’attend ? »&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Le problème&lt;/h3&gt;&lt;p&gt;La demande n’est pas enregistrée de manière commune. Le client ne sait pas si le livre est mis de côté.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;La conséquence&lt;/h3&gt;&lt;p&gt;Un déplacement peut être inutile. Le vendeur doit parfois recommencer la recherche.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;L’objectif&lt;/h3&gt;&lt;p&gt;Donner une confirmation fiable avant que le client se déplace.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Vous reliez un problème concret à un effet sur le client. Votre diagnostic doit rester proportionné aux informations disponibles.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s7&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 07&lt;/p&gt;&lt;h1&gt;Une amélioration réaliste&lt;/h1&gt;&lt;h2&gt;Proposition : une réservation confirmée&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Action&lt;/h3&gt;&lt;p&gt;Ajouter un formulaire simple de demande de réservation.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Moyens&lt;/h3&gt;&lt;p&gt;Un vendeur vérifie le livre, le met de côté et inscrit la référence dans un registre partagé.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Confirmation&lt;/h3&gt;&lt;p&gt;Un message précise le livre, le délai de retrait et la référence.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;p class=&quot;note&quot;&gt;&lt;strong&gt;Limite :&lt;/strong&gt; aucune disponibilité promise avant vérification. &lt;strong&gt;Indicateur proposé :&lt;/strong&gt; part des réservations confirmées effectivement retirées.&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Montrez qui fait quoi et ce qui circule entre les canaux. Une idée séduisante sans organisation reste une intention. L’indicateur doit mesurer un résultat utile.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s8&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 08&lt;/p&gt;&lt;h1&gt;Votre livre vous attend&lt;/h1&gt;&lt;h2&gt;Maquette de communication — service proposé&lt;/h2&gt;&lt;article class=&quot;poster&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;LE FIL DES PAGES • PROPOSITION&lt;/p&gt;&lt;h3&gt;Préparez votre visite.&lt;/h3&gt;&lt;p&gt;Vous cherchez un livre pour un cadeau ? Envoyez votre demande depuis notre formulaire. Un libraire vérifie sa disponibilité puis vous confirme la référence et le délai de retrait. Attendez cette confirmation avant de vous déplacer. Vous pourrez demander conseil et régler votre achat en boutique.&lt;/p&gt;&lt;/article&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Ce message court présente un bénéfice, une action et une condition. Il n’annonce pas une promotion inventée. Dans votre Canva, indiquez qu’il s’agit d’une proposition de service.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s9&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 09&lt;/p&gt;&lt;h1&gt;Garder le fil du service&lt;/h1&gt;&lt;h2&gt;Même si le client change de canal&lt;/h2&gt;&lt;div class=&quot;journey service&quot;&gt;&lt;article&gt;&lt;b&gt;1&lt;/b&gt;&lt;p&gt;Écouter et reformuler&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;2&lt;/b&gt;&lt;p&gt;Retrouver la référence&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;3&lt;/b&gt;&lt;p&gt;Vérifier les faits&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;4&lt;/b&gt;&lt;p&gt;Annoncer une suite possible et un délai&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;b&gt;5&lt;/b&gt;&lt;p&gt;Donner un canal de suivi&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;p&gt;« Vous n’avez pas reçu de confirmation. Je vérifie votre demande à partir du titre et de sa date, puis je vous explique la suite possible. »&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;La réponse ne promet pas une solution avant vérification. Le traitement d’une réclamation dépend des faits et des règles du commerce ; le client doit comprendre la prochaine étape.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;section class=&quot;slide&quot; id=&quot;s10&quot;&gt;&lt;p class=&quot;kicker&quot;&gt;MAQUETTE FICTIVE • DIAPOSITIVE 10&lt;/p&gt;&lt;h1&gt;Sources et bilan&lt;/h1&gt;&lt;h2&gt;La preuve fait partie du travail&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://www.francenum.gouv.fr/files/Documents/En_avant_vers_le_numerique_juin_2019.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;France Num : Commerçants, en avant vers le numérique&lt;/a&gt; — notions ; consulté le 11/10/2026.&lt;/li&gt;&lt;li&gt;Commerce, cliente et fonctionnement : cas fictif créé pour cette maquette. Aucune observation réelle.&lt;/li&gt;&lt;li&gt;Dans votre présentation : ajoutez au moins trois sources utiles avec leurs URL exactes et vos dates réelles de consultation.&lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;note&quot;&gt;&lt;strong&gt;Bilan du cas :&lt;/strong&gt; la continuité dépend de la transmission d’une référence et d’une confirmation fiable. La faisabilité du registre partagé reste à vérifier dans un commerce réel.&lt;/p&gt;&lt;details&gt;&lt;summary&gt;Pourquoi cette diapositive est structurée ainsi&lt;/summary&gt;&lt;p&gt;Citez les pages effectivement consultées, pas uniquement le nom du moteur de recherche. Votre bilan doit expliquer ce que vous avez appris et les limites de votre enquête.&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;footer&gt;&lt;button id=&quot;prev&quot;&gt;← Précédente&lt;/button&gt;&lt;span id=&quot;counter&quot; class=&quot;counter&quot;&gt;&lt;/span&gt;&lt;button id=&quot;next&quot;&gt;Suivante →&lt;/button&gt;&lt;/footer&gt;&lt;script&gt;let n=1;const ss=[...document.querySelectorAll(&#x27;.slide&#x27;)];function show(i){n=Math.max(1,Math.min(ss.length,i));ss.forEach((s,k)=&gt;s.classList.toggle(&#x27;active&#x27;,k===n-1));document.getElementById(&#x27;counter&#x27;).textContent=n+&#x27; / &#x27;+ss.length;document.getElementById(&#x27;prev&#x27;).disabled=n===1;document.getElementById(&#x27;next&#x27;).disabled=n===ss.length;window.scrollTo(0,0)}document.getElementById(&#x27;prev&#x27;).onclick=()=&gt;show(n-1);document.getElementById(&#x27;next&#x27;).onclick=()=&gt;show(n+1);document.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.target.closest(&#x27;summary,button,a&#x27;))return;if(e.key===&#x27;ArrowRight&#x27;)show(n+1);if(e.key===&#x27;ArrowLeft&#x27;)show(n-1)});show(1);&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;">
+</iframe>
+</details>
+<h3>Pas à pas dans Canva</h3>
+<ol>
+<li>Créez les 10 diapositives et leur titre.</li>
+<li>Ajoutez vos phrases personnelles et vos éléments de preuve.</li>
+<li>Ajoutez schéma, tableau et maquette. Choisissez une palette limitée et un contraste net.</li>
+<li>Utilisez les illustrations autorisées / gratuites ; mentionnez leur provenance si vous réutilisez une photo du commerce.</li>
+<li>Exportez en PDF via le menu de partage/téléchargement. Vérifiez les 10 pages et les liens.</li>
+<li>Gardez aussi le lien Canva selon la procédure de remise de l’enseignant. Ne rendez pas votre création publique sans nécessité.</li>
+</ol>
+<label class="field" for="canvaprogress">Ce qu’il me reste à terminer dans Canva<textarea id="canvaprogress" data-save="canvaprogress" rows="3" placeholder="Numéro de diapositive + tâche précise">
+</textarea>
+</label>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="canvacheck_0"> Mes 10 diapositives répondent à la trame.</label>
+<label>
+<input type="checkbox" data-save="canvacheck_1"> Le texte est lisible et les sources présentes.</label>
+<label>
+<input type="checkbox" data-save="canvacheck_2"> Les captures ne remplacent pas mes explications.</label>
+<label>
+<input type="checkbox" data-save="canvacheck_3"> J’ai téléchargé et rouvert mon PDF.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_canva"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="oral">
+<h2>08 · Préparer ma prise de parole</h2>
+<p class="sub">Expliquer et défendre, sans réciter les diapositives.</p>
+<div class="grid">
+<div class="card">
+<h3>Votre passage : 3 minutes</h3>
+<ol>
+<li>
+<strong>0:00–0:30 :</strong> présentez votre commerce et votre objectif.</li>
+<li>
+<strong>0:30–1:00 :</strong> expliquez la différence entre multicanal et omnicanal.</li>
+<li>
+<strong>1:00–2:00 :</strong> racontez le parcours du client et son problème.</li>
+<li>
+<strong>2:00–3:00 :</strong> défendez votre solution, ses moyens et sa limite.</li>
+</ol>
+<p>Puis répondez à une question pendant environ une minute. Vous n’avez pas à commenter les 10 diapositives une par une.</p>
+</div>
+<div class="card">
+<h3>Votre attitude professionnelle</h3>
+<ul>
+<li>Annoncez clairement le sujet.</li>
+<li>Regardez les camarades et parlez assez fort.</li>
+<li>Utilisez des mots précis : canal, besoin, continuité, preuve, proposition.</li>
+<li>Justifiez par « parce que… » et un exemple.</li>
+<li>Dites « je n’ai pas pu vérifier » quand une preuve manque.</li>
+</ul>
+</div>
+</div>
+<label class="field" for="oralplan">Mon aide-mémoire : 5 mots-clés, pas un texte à lire<textarea id="oralplan" data-save="oralplan" rows="3" placeholder="Commerce / notions / besoin / solution / limite">
+</textarea>
+</label>
+<label class="field" for="oralquestion">Ma réponse à une question possible<textarea id="oralquestion" data-save="oralquestion" rows="4" placeholder="Pourquoi votre solution serait-elle utile ? Quels moyens demande-t-elle ? Qu’avez-vous vraiment vérifié ?">
+</textarea>
+</label>
+<h3>Entraînement en binôme</h3>
+<ol>
+<li>Chronométrez 3 minutes.</li>
+<li>L’auditeur note une idée comprise et un passage à préciser.</li>
+<li>Il pose une question sur les preuves ou la faisabilité.</li>
+<li>Échangez les rôles puis améliorez votre réponse.</li>
+</ol>
+<label class="field" for="oralfeedback">Mon retour d’entraînement<textarea id="oralfeedback" data-save="oralfeedback" rows="3" placeholder="Une réussite + une amélioration concrète à essayer au prochain passage">
+</textarea>
+</label>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="oralcheck_0"> Je tiens dans le temps annoncé.</label>
+<label>
+<input type="checkbox" data-save="oralcheck_1"> Je peux expliquer ma solution sans lire une page.</label>
+<label>
+<input type="checkbox" data-save="oralcheck_2"> Je sais distinguer un fait d’une proposition.</label>
+</div>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_oral"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="bilan">
+<h2>09 · Vérifier, remettre et garder une trace</h2>
+<p class="sub">Rendre un travail complet et expliquer ce que vous avez appris.</p>
+<h3>Votre dossier de remise</h3>
+<div class="checks">
+<label>
+<input type="checkbox" data-save="deliver_0"> PDF Canva de 10 diapositives : NOM_Prenom_1MCVA_Omnicanal.pdf.</label>
+<label>
+<input type="checkbox" data-save="deliver_1"> Carnet de recherche lisible : notes téléchargées ou imprimées en PDF.</label>
+<label>
+<input type="checkbox" data-save="deliver_2"> Fichier JSON conservé pour reprendre le travail.</label>
+<label>
+<input type="checkbox" data-save="deliver_3"> Bilan individuel complété.</label>
+<label>
+<input type="checkbox" data-save="deliver_4"> Lien Canva communiqué selon la consigne de l’enseignant.</label>
+</div>
+<p>Remettez les fichiers par le moyen indiqué en classe (ENT ou espace prévu). Le bouton « Exporter » ne les envoie pas. Les cases cochées servent à votre suivi personnel, pas à calculer votre note.</p>
+<h3>Votre trace pour le portfolio E31</h3>
+<p>Conservez les productions utiles et un bilan qui explique votre contribution personnelle. Il s’agit d’une activité de classe : indiquez-le. Une analyse documentaire n’est pas une vente réellement réalisée en entreprise.</p>
+<label class="field" for="context">Contexte, objectif et travail réalisé<textarea id="context" data-save="context" rows="4" placeholder="Activité de classe / commerce étudié / objectif / ce que j’ai fait moi-même">
+</textarea>
+</label>
+<label class="field" for="skills">Ce que je sais mieux faire maintenant<textarea id="skills" data-save="skills" rows="4" placeholder="Une compétence + un exemple concret tiré de mon travail + la production qui en apporte une trace">
+</textarea>
+</label>
+<label class="field" for="limits">Une difficulté et une amélioration<textarea id="limits" data-save="limits" rows="4" placeholder="Ma difficulté… Ce que j’ai essayé… Ce que je vais améliorer…">
+</textarea>
+</label>
+<label class="field" for="result">Résultat et retour reçu<textarea id="result" data-save="result" rows="4" placeholder="Production terminée / limites de l’enquête / retour de l’enseignant ou des camarades">
+</textarea>
+</label>
+<div class="callout">Vous préparez des preuves de progression pour E31. Votre enseignant décidera de leur utilisation et des compétences effectivement démontrées. Le nombre de diapositives ne remplace pas la qualité du raisonnement.</div>
+<h3>Si vous avez terminé en avance</h3>
+<ul>
+<li>Comparez une deuxième enseigne : quelle preuve de continuité trouvez-vous ?</li>
+<li>Proposez un indicateur mesurable et précisez sa limite.</li>
+<li>Imaginez un client peu à l’aise avec le numérique : comment garder un accès au conseil ?</li>
+<li>Préparez une réponse à une objection sur le coût de votre solution.</li>
+</ul>
+<label class="field" for="challenge">Mon approfondissement facultatif<textarea id="challenge" data-save="challenge" rows="5" placeholder="Choisissez un défi ; une réponse argumentée de 5 à 8 lignes.">
+</textarea>
+</label>
+<label class="done">
+<input type="checkbox" data-progress data-save="done_bilan"> J’ai terminé et vérifié cette étape.</label>
+</section>
+<section class="section" id="aide">
+<h2>Aide · Je débloque mon travail</h2>
+<p class="sub">Une difficulté = une prochaine action précise.</p>
+<div class="grid">
+<div class="card">
+<h3>Je ne comprends pas une notion</h3>
+<p>Revenez à l’étape 02. Lisez la définition et l’exemple, répondez au quiz, puis expliquez la notion avec votre commerce. Si cela reste flou, notez la phrase qui vous pose problème.</p>
+</div>
+<div class="card">
+<h3>Je ne trouve pas de sources</h3>
+<p>Cherchez le nom exact et la commune. Vérifiez site officiel, contact, services. Si le commerce ne laisse aucune information vérifiable, choisissez une autre boutique après avoir noté votre difficulté.</p>
+</div>
+<div class="card">
+<h3>Je ne sais pas quoi proposer</h3>
+<p>Commencez par un problème du client : déplacement inutile, information manquante, commande introuvable. Reliez deux points de contact pour réduire ce problème.</p>
+</div>
+<div class="card">
+<h3>Mon compte / Canva est bloqué</h3>
+<p>Continuez votre brouillon dans ce carnet. Conservez-le et signalez le message exact à l’enseignant. Ne perdez pas une séance à répéter la même tentative.</p>
+</div>
+</div>
+<label class="field" for="helpneeded">Ma demande d’aide précise<textarea id="helpneeded" data-save="helpneeded" rows="3" placeholder="J’en suis à… J’ai essayé… Je bloque sur…">
+</textarea>
+</label>
+<h3>Lexique utile</h3>
+<p>
+<strong>Point de contact :</strong> moment / outil par lequel client et commerce entrent en relation. <strong>Friction :</strong> difficulté qui gêne le parcours. <strong>Coordination :</strong> organisation des actions et informations entre canaux. <strong>Indicateur :</strong> mesure utilisée pour apprécier un résultat. <strong>CRM :</strong> outil de gestion de la relation client ; il peut centraliser des informations utiles, mais son existence ne prouve pas que l’organisation fonctionne.</p>
+<h3>Références et création du support</h3>
+<p>Parcours personnalisé par A.Zeboudj, 1re MCV A, semaine du 12 octobre 2026. Adaptation pédagogique du support d’omnicanalité transmis par Mariam Moutaouakil ; exemple d’élève utilisé uniquement pour repérer la structure et remplacé par une nouvelle maquette fictive.</p>
+<p>Référentiel MCV : Bloc 1 et E31, document Éduscol fourni pour la préparation. Ressources web officielles listées dans les étapes 01 et 03, consultées le 11 octobre 2026.</p>
+</section>
+<footer>A.Zeboudj · 1re MCV A · Semaine du 12 octobre 2026 · Support pédagogique autonome<br>Merci pour votre implication et la qualité de votre travail.</footer>
+</main>
+<div id="status" role="status" aria-live="polite">Bienvenue. Votre carnet doit être exporté pour changer de PC.</div><script>const KEY='1MCVA_omni_v1';const controls=[...document.querySelectorAll('[data-save]')];const status=document.getElementById('status');let currentState={};function tell(t){status.textContent=t}function collect(){const fields={};controls.forEach(e=>fields[e.dataset.save]=e.type==='checkbox'||e.type==='radio'?e.checked:e.value);return {format:'1MCVA_OMNICANAL',version:1,savedAt:new Date().toISOString(),fields}}function fill(s){controls.forEach(e=>{let v=s.fields[e.dataset.save];if(e.type==='checkbox'||e.type==='radio')e.checked=v===true;else e.value=typeof v==='string'?v:''});progress()}function progress(){let done=[...document.querySelectorAll('[data-progress]')].filter(e=>e.checked).length;document.querySelector('progress').value=done;document.getElementById('count').textContent=done+' / 10 étapes validées par vous'}function save(){currentState=collect();try{localStorage.setItem(KEY,JSON.stringify(currentState));tell('Brouillon enregistré sur ce navigateur. Exportez avant de changer de PC.')}catch(e){tell('Stockage local indisponible : exportez votre carnet pour le conserver.')}progress()}controls.forEach(e=>e.addEventListener('input',save));function download(name,text,type){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}function safeName(){return (document.getElementById('identite').value||'Eleve').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9_-]+/g,'_').slice(0,60)}document.getElementById('export').onclick=()=>{download(safeName()+'_Omnicanal_Carnet.json',JSON.stringify(collect(),null,2),'application/json');tell('Carnet téléchargé. Placez-le dans votre espace personnel.')} ;document.getElementById('notes').onclick=()=>{let text='CARNET OMNICANAL — 1re MCV A\nA.Zeboudj\n'+new Date().toLocaleDateString('fr-FR')+'\n\n';document.querySelectorAll('.section').forEach(sec=>{text+=sec.querySelector('h2').textContent+'\n';sec.querySelectorAll('textarea').forEach(e=>text+=e.parentElement.childNodes[0].textContent+'\n'+(e.value||'[Non renseigné]')+'\n\n')});download(safeName()+'_Omnicanal_Notes.txt',text,'text/plain;charset=utf-8')};document.getElementById('import').onclick=()=>document.getElementById('file').click();document.getElementById('file').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{if(f.size>2000000)throw Error('Fichier trop volumineux.');const s=JSON.parse(await f.text());if(s.format!=='1MCVA_OMNICANAL'||s.version!==1||!s.fields||typeof s.fields!=='object'||Array.isArray(s.fields))throw Error('Ce fichier n’est pas un carnet de cette mission.');if(!confirm('Importer ce carnet remplacera le brouillon de ce navigateur. Continuer ?'))return;fill(s);save();document.querySelectorAll('.feedback').forEach(e=>e.hidden=true);tell('Carnet importé. Vérifiez votre identité et reprenez votre étape.')}catch(e){tell('Import impossible : '+e.message)}ev.target.value=''};document.getElementById('clear').onclick=()=>{if(confirm('Avez-vous exporté votre carnet ? Effacer retire les données de CE navigateur.')){controls.forEach(e=>{if(e.type==='checkbox'||e.type==='radio')e.checked=false;else e.value=''});try{localStorage.removeItem(KEY)}catch(e){}document.querySelectorAll('.feedback').forEach(e=>e.hidden=true);progress();tell('Données effacées de ce navigateur. Votre fichier exporté reste disponible.')}};document.getElementById('print').onclick=()=>window.print();document.querySelectorAll('.checkquiz').forEach(b=>b.onclick=()=>{const q=b.closest('.quiz'),s=q.querySelector('input:checked'),fb=q.querySelector('.feedback');if(!s){tell('Choisissez une réponse avant de demander l’explication.');return}fb.hidden=false;fb.dataset.result=s.value===q.dataset.answer?'correct':'retry';tell(s.value===q.dataset.answer?'Bonne réponse : lisez la justification.':'À reprendre : lisez l’explication puis réessayez.')});try{let raw=localStorage.getItem(KEY);if(raw){if(confirm('Un brouillon existe sur ce navigateur. Le charger uniquement s’il vous appartient ?'))fill(JSON.parse(raw));else{localStorage.removeItem(KEY);tell('Nouveau carnet. Importez votre sauvegarde si vous en avez une.')}}}catch(e){tell('Vous pouvez travailler ; pensez à exporter votre carnet.')}progress();if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-10% 0px -70% 0px'});document.querySelectorAll('.section').forEach(s=>observer.observe(s))}function escaped(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}document.getElementById('print').textContent='Imprimer mon carnet / PDF';document.getElementById('print').onclick=()=>{const w=window.open('','_blank');if(!w){tell('Autorisez la fenêtre d’impression ou téléchargez vos notes.');return}let content='<h1>Mon carnet omnicanal</h1><p>A.Zeboudj • 1re MCV A • '+escaped(document.getElementById('identite').value)+'</p>';document.querySelectorAll('.section').forEach(sec=>{const fields=[...sec.querySelectorAll('textarea')];if(!fields.length)return;content+='<section><h2>'+escaped(sec.querySelector('h2').textContent)+'</h2>';fields.forEach(e=>content+='<h3>'+escaped(e.parentElement.childNodes[0].textContent)+'</h3><p class="answer">'+escaped(e.value||'[Non renseigné]')+'</p>');content+='</section>'});w.document.write('<!doctype html><html lang="fr"><meta charset="utf-8"><title>Carnet omnicanal</title><style>body{font:12pt/1.5 Arial;color:#17484B;margin:30px}h1{font-size:24pt}h2{font-size:17pt;border-bottom:1px solid #ccc;padding-bottom:8px}h3{font-size:11pt}section{break-inside:auto}.answer{white-space:pre-wrap;background:#f6f8f4;padding:10px;border-left:3px solid #91afa6;overflow-wrap:anywhere}@media print{body{margin:0}h3{break-after:avoid}.answer{break-inside:avoid}}</style>'+content+'<p>Trace d’activité de classe : recherche, analyse et propositions personnelles.</p></html>');w.document.close();setTimeout(()=>w.print(),300)};
+document.querySelector('nav').querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(event){
+    event.preventDefault();
+    var id=a.getAttribute('href').slice(1);
+    var section=document.getElementById(id);
+    if(section){
+      if(window.innerWidth<680){document.getElementById('navigation').open=false;}
+      section.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+if(window.innerWidth<680){document.getElementById('navigation').open=false;}
+</script></body></html>
