@@ -89,7 +89,14 @@ function creerSuiviOmnicanal() {
       const item = q[1] === 'paragraph' ? form.addParagraphTextItem() : form.addTextItem();
       item.setTitle(q[0]).setRequired(true);
     });
-    if (!form.getDestinationId()) form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
+    // getDestinationId() lève une exception si aucun tableur n'est encore associé.
+    // C'est le cas normal lors de la première exécution et lors d'une reprise.
+    let destinationId = null;
+    try { destinationId = form.getDestinationId(); } catch (err) { destinationId = null; }
+    if (destinationId && destinationId !== ss.getId()) {
+      throw new Error('Le formulaire ' + etape.titre + ' est relié à un autre tableur. Vérifiez-le avant de continuer.');
+    }
+    if (!destinationId) form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
     const hasTrigger = ScriptApp.getProjectTriggers().some(t =>
       t.getHandlerFunction() === 'enregistrerDepotOmnicanal' && t.getTriggerSourceId() === form.getId());
     if (!hasTrigger) ScriptApp.newTrigger('enregistrerDepotOmnicanal').forForm(form).onFormSubmit().create();
